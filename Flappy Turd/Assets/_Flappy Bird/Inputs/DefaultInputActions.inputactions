@@ -1,0 +1,67 @@
+{
+    "name": "DefaultInputActions",
+    "maps": [
+        {
+            "name": "Game",
+            "id": "1849891f-5a02-4310-b45b-c6492781432b",
+            "actions": [
+                {
+                    "name": "Flap",
+                    "type": "Button",
+                    "id": "722446c0-1182-42d5-93d1-1f064bc72c1c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "db174a14-2612-48bd-8545-b06bad32d28b",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Flap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2ca3b14d-4985-4f18-8e2c-e6e5f450a326",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Flap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e21928ad-0e25-4963-b871-777d10fdb93d",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Flap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1e6ebd8f-6e6f-4b1d-bd6f-2e28e13c448f",
+                    "path": "<HID::Raspberry Pi CircuitPython HID>/button2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Flap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
