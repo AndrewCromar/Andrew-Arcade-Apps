@@ -1,33 +1,38 @@
+using System.IO;
 using System.Diagnostics;
-using System.Collections.Generic;
 using UnityEngine;
+using ONYX;
 
 public class DriverController : MonoBehaviour
 {
+    [HideInInspector] public static DriverController instance;
+
     [Header("References")]
-    public AppScriptableObject flappyTurd;
+    [SerializeField] private Transform appButtonContainer;
+    [SerializeField] private GameObject appButtonPrefab;
+    [SerializeField] private App[] apps;
+
+    private void Awake() { instance = this; }
 
     private void Start()
     {
-        UnityEngine.Debug.Log(ToCamelcase(flappyTurd.appName));
-    }
-
-    public void StartApp()
-    {
-        Process.Start("C:/Users/scrom/AppData/Local/Microsoft/WindowsApps/mspaint.exe");
-    }
-
-    public string ToCamelcase(string _text)
-    {
-        string lower = _text.ToLower();
-        List<string> wordList = new List<string>(lower.Split(' '));
-        string firstWord = wordList[0];
-        wordList.RemoveAt(0);
-        string finalCamelcase = firstWord;
-        foreach (string word in wordList)
+        // Load apps
+        foreach (App app in apps)
         {
-            finalCamelcase += char.ToUpper(word[0]) + word.Substring(1);
+            Instantiate(appButtonPrefab, appButtonContainer).GetComponent<AppButtonController>().SetApp(app);
         }
-        return finalCamelcase;
+    }
+
+    public void StartApp(App _app)
+    {
+        UnityEngine.Debug.Log($"Starting app: {_app.appName}.");
+
+        string appNameCamelCase = new func_ToCamelCase().ToCamelCase(_app.appName);
+        string appPath = Path.Combine(Application.dataPath, "..", appNameCamelCase, $"{appNameCamelCase}.x86_64");
+
+        if (File.Exists(appPath))
+            Process.Start(appPath);
+        else
+            UnityEngine.Debug.LogError($"Executable not found at: {appPath}");
     }
 }

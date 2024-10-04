@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Andrew Arcade Driver.sln"
+    "dotnet.defaultSolution": "Driver.sln"
 }
