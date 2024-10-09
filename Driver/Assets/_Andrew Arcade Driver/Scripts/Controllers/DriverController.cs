@@ -3,12 +3,14 @@ using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
 using ONYX;
+using UnityEngine.EventSystems;
 
 public class DriverController : MonoBehaviour
 {
     [HideInInspector] public static DriverController instance;
 
     [Header("References")]
+    [SerializeField] private EventSystem eventSystem;
     [SerializeField] private Transform appButtonContainer;
     [SerializeField] private Text outputText;
     [SerializeField] private GameObject appButtonPrefab;
@@ -19,9 +21,15 @@ public class DriverController : MonoBehaviour
     private void Start()
     {
         // Load apps
+        bool first = true;
         foreach (App app in apps)
         {
-            Instantiate(appButtonPrefab, appButtonContainer).GetComponent<AppButtonController>().SetApp(app);
+            GameObject newAppButton = Instantiate(appButtonPrefab, appButtonContainer);
+            newAppButton.GetComponent<AppButtonController>().SetApp(app);
+            if(first){
+                first = false;
+                eventSystem.SetSelectedGameObject(newAppButton);
+            }
             Output("Created app: " + app.appName);
         }
     }
