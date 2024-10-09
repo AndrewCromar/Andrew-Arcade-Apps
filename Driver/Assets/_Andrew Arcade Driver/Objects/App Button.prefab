@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3741899505201951014}
   - component: {fileID: 5360022117616413841}
   - component: {fileID: 1346424577765123878}
+  - component: {fileID: -6293060636310261845}
   m_Layer: 5
   m_Name: App Button
   m_TagString: Untagged
@@ -96,7 +97,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 3
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 1, g: 0.5560052, b: 0, a: 1}
@@ -148,3 +149,24 @@ MonoBehaviour:
   image: {fileID: 3741899505201951014}
   app: {fileID: 0}
   setupFinished: 0
+--- !u!95 &-6293060636310261845
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6093090079707414084}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 484c628f170b61843ad97c321adc74c8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
