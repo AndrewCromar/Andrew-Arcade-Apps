@@ -8,6 +8,7 @@ public class AppButtonController : MonoBehaviour
     [SerializeField] private App app;
 
     [Header("Debug")]
+    [SerializeField] public int page;
     [SerializeField] private bool setupFinished;
 
     private void Update()

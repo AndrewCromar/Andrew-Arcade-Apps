@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   appName: Flappy Turd
   appDeveloper: ONYX Development
-  appIcon: {fileID: 21300000, guid: ee49a6a8089aa6148914ed107ff8eb94, type: 3}
+  appIcon: {fileID: 21300000, guid: d4cb73476a4539b44a8dddac35a25ab4, type: 3}

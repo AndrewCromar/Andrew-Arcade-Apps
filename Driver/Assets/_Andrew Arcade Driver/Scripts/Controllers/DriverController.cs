@@ -11,9 +11,12 @@ public class DriverController : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private EventSystem eventSystem;
-    [SerializeField] private Transform appButtonContainer;
     [SerializeField] private Text outputText;
+    [Space]
+    [SerializeField] private Transform appPageContainer;
     [SerializeField] private GameObject appButtonPrefab;
+    [SerializeField] private GameObject appPagePrefab;
+    [Space]
     [SerializeField] private App[] apps;
 
     private void Awake() { instance = this; }
@@ -22,15 +25,29 @@ public class DriverController : MonoBehaviour
     {
         // Load apps
         bool first = true;
+        int iteration = 1;
+        int page = 1;
+        Transform currentPage = Instantiate(appPagePrefab, appPageContainer).transform;
+        currentPage.gameObject.name = $"Page {page}";
         foreach (App app in apps)
         {
-            GameObject newAppButton = Instantiate(appButtonPrefab, appButtonContainer);
-            newAppButton.GetComponent<AppButtonController>().SetApp(app);
+            if(iteration % 29 == 0){
+                page ++;
+                currentPage = Instantiate(appPagePrefab, appPageContainer).transform;
+                currentPage.gameObject.name = $"Page {page}";
+            }
+
+            GameObject newAppButton = Instantiate(appButtonPrefab, currentPage);
+            newAppButton.name = $"App Button ({app.name})(pg.{page})";
+            newAppButton.GetComponentInChildren<AppButtonController>().SetApp(app);
+            newAppButton.GetComponentInChildren<AppButtonController>().page = page;
             if(first){
                 first = false;
                 eventSystem.SetSelectedGameObject(newAppButton);
             }
             Output("Created app: " + app.appName);
+
+            iteration ++;
         }
     }
 
