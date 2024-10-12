@@ -9,6 +9,9 @@ public class CartridgeContainerController : MonoBehaviour
     [Space]
     [SerializeField] private List<Cartridge> cartridges = new List<Cartridge>();
 
+    [Header ("Debug")]
+    [SerializeField] private List<CartridgeController>() loadedCartridges = new List<CartridgeController>();
+
     private void Start()
     {
         LoadCartriges();
