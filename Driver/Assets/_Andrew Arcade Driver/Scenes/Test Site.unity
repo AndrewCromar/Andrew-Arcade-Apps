@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 03389866351d19a47adc95c57d054097, type: 2}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -214,6 +214,75 @@ Transform:
   m_Children: []
   m_Father: {fileID: 569003382}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &391556129
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1864952053}
+    m_Modifications:
+    - target: {fileID: 517910351697193123, guid: 2075853ac50f17340b9c8a11b7aea699, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 517910351697193123, guid: 2075853ac50f17340b9c8a11b7aea699, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 517910351697193123, guid: 2075853ac50f17340b9c8a11b7aea699, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 517910351697193123, guid: 2075853ac50f17340b9c8a11b7aea699, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 517910351697193123, guid: 2075853ac50f17340b9c8a11b7aea699, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 517910351697193123, guid: 2075853ac50f17340b9c8a11b7aea699, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 517910351697193123, guid: 2075853ac50f17340b9c8a11b7aea699, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 517910351697193123, guid: 2075853ac50f17340b9c8a11b7aea699, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 517910351697193123, guid: 2075853ac50f17340b9c8a11b7aea699, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 517910351697193123, guid: 2075853ac50f17340b9c8a11b7aea699, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 517910351697193123, guid: 2075853ac50f17340b9c8a11b7aea699, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 517910351697193123, guid: 2075853ac50f17340b9c8a11b7aea699, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 517910351697193123, guid: 2075853ac50f17340b9c8a11b7aea699, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 892887090819822105, guid: 2075853ac50f17340b9c8a11b7aea699, type: 3}
+      propertyPath: m_Name
+      value: Desk10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2075853ac50f17340b9c8a11b7aea699, type: 3}
 --- !u!1 &569003380
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,6 +332,11 @@ Transform:
   - {fileID: 795432806}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &604383758 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 517910351697193123, guid: 2075853ac50f17340b9c8a11b7aea699, type: 3}
+  m_PrefabInstance: {fileID: 391556129}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &795432804
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,7 +691,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1059173432
 Transform:
   m_ObjectHideFlags: 0
@@ -701,7 +775,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1308328527
 Transform:
   m_ObjectHideFlags: 0
@@ -820,6 +894,7 @@ Transform:
   - {fileID: 1308328527}
   - {fileID: 916148834}
   - {fileID: 1059173432}
+  - {fileID: 604383758}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
