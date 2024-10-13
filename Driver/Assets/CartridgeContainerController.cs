@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CartridgeContainerController : MonoBehaviour
 {
@@ -9,19 +10,87 @@ public class CartridgeContainerController : MonoBehaviour
     [Space]
     [SerializeField] private List<Cartridge> cartridges = new List<Cartridge>();
 
-    [Header ("Debug")]
-    [SerializeField] private List<CartridgeController>() loadedCartridges = new List<CartridgeController>();
+    [Header("Settings")]
+    [SerializeField] private float small;
+    [SerializeField] private float large;
+    [Space]
+    [SerializeField] private float positionSmoothing;
+    [SerializeField] private float rotationSmoothing;
+    [Space]
+    [SerializeField] private float randomYRotationOffset;
+    [Space]
+    [SerializeField] private Vector3 upPosition;
+    [SerializeField] private Vector3 downPosition;
+    [Space]
+    [SerializeField] private Vector3 upRotation;
+    [SerializeField] private Vector3 downRotation;
+
+    [Header("Debug")]
+    [SerializeField] private int currentHovered = 0;
+    [SerializeField] private List<GameObject> loadedCartridges = new List<GameObject>();
+
+    [Header("Inputs")]
+    [SerializeField] private bool upInputQueued;
+    [SerializeField] private bool downInputQueued;
+    [SerializeField] private bool selectInputQueued;
 
     private void Start()
     {
         LoadCartriges();
     }
 
+    private void Update()
+    {
+        if (upInputQueued)
+        {
+            currentHovered++;
+            upInputQueued = false;
+        }
+        else if (downInputQueued)
+        {
+            currentHovered--;
+            downInputQueued = false;
+        }
+        else if (selectInputQueued)
+        {
+            Debug.Log("Launch app.");
+            selectInputQueued = false;
+        }
+        currentHovered = Mathf.Clamp(currentHovered, 0, loadedCartridges.Count - 1);
+
+        foreach (GameObject cartridge in loadedCartridges) cartridge.GetComponent<CartridgeController>().DeHover();
+        loadedCartridges[currentHovered].GetComponent<CartridgeController>().Hover();
+
+        CameraController.instance.SetTarget(loadedCartridges[currentHovered].transform);
+
+        float yPos = 0;
+        for (int i = 0; i < loadedCartridges.Count; i++)
+        {
+            CartridgeController cartridgeController = loadedCartridges[i].GetComponent<CartridgeController>();
+            bool hovered = cartridgeController.GetHovered();
+            bool nextHovered = loadedCartridges[Mathf.Clamp(i + 1, 0, loadedCartridges.Count - 1)].GetComponent<CartridgeController>().GetHovered();
+
+            if (i == 0) if (hovered) yPos += large - +(small / 2); else yPos += small / 2;
+
+            loadedCartridges[i].transform.position = Vector3.Lerp(loadedCartridges[i].transform.position, new Vector3(0, yPos, 0) + (hovered ? upPosition : downPosition), positionSmoothing * Time.deltaTime);
+            loadedCartridges[i].transform.rotation = Quaternion.Lerp(loadedCartridges[i].transform.rotation, Quaternion.Euler((hovered ? upRotation : downRotation + new Vector3(0, cartridgeController.GetYRotationOffset(), 0))), rotationSmoothing * Time.deltaTime);
+
+            if (hovered || nextHovered) yPos += large; else yPos += small;
+        }
+    }
+
     private void LoadCartriges()
     {
         foreach (Cartridge cartridge in cartridges)
         {
-            Instantiate(cartridgePrefab, cartridgeContainer).GetComponent<CartridgeController>().SetCartridge(cartridge);
+            loadedCartridges.Add(Instantiate(cartridgePrefab, cartridgeContainer));
+            CartridgeController cartridgeController = loadedCartridges[loadedCartridges.Count - 1].GetComponent<CartridgeController>();
+            cartridgeController.SetCartridge(cartridge);
+            cartridgeController.SetYRotationOffset(Random.Range(-randomYRotationOffset, randomYRotationOffset));
         }
     }
+
+    public void UpInput(InputAction.CallbackContext ctx) { if (ctx.performed) upInputQueued = true; }
+    public void DownInput(InputAction.CallbackContext ctx) { if (ctx.performed) downInputQueued = true; }
+    public void SelectInput(InputAction.CallbackContext ctx) { if (ctx.performed) selectInputQueued = true; }
 }
