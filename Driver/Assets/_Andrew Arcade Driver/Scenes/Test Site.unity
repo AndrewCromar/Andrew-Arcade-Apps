@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 583f0d117f7056948943f87366c0f77b, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -236,7 +236,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 517910351697193123, guid: 2075853ac50f17340b9c8a11b7aea699, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.25
+      value: -5.88
       objectReference: {fileID: 0}
     - target: {fileID: 517910351697193123, guid: 2075853ac50f17340b9c8a11b7aea699, type: 3}
       propertyPath: m_LocalPosition.y
@@ -244,7 +244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 517910351697193123, guid: 2075853ac50f17340b9c8a11b7aea699, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3
+      value: -0.63
       objectReference: {fileID: 0}
     - target: {fileID: 517910351697193123, guid: 2075853ac50f17340b9c8a11b7aea699, type: 3}
       propertyPath: m_LocalRotation.w
@@ -565,8 +565,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 91a18c72f2de72f4c9fd2a3c6bc85b9f, type: 2}
   - {fileID: 11400000, guid: 91a18c72f2de72f4c9fd2a3c6bc85b9f, type: 2}
   - {fileID: 11400000, guid: 91a18c72f2de72f4c9fd2a3c6bc85b9f, type: 2}
-  - {fileID: 11400000, guid: 91a18c72f2de72f4c9fd2a3c6bc85b9f, type: 2}
-  - {fileID: 11400000, guid: 91a18c72f2de72f4c9fd2a3c6bc85b9f, type: 2}
+  - {fileID: 11400000, guid: 3e13380df7373d548bba9f11370f568f, type: 2}
+  - {fileID: 11400000, guid: 129f74ca163ad1642bfda745b288b888, type: 2}
   - {fileID: 11400000, guid: 91a18c72f2de72f4c9fd2a3c6bc85b9f, type: 2}
   - {fileID: 11400000, guid: 91a18c72f2de72f4c9fd2a3c6bc85b9f, type: 2}
   - {fileID: 11400000, guid: 91a18c72f2de72f4c9fd2a3c6bc85b9f, type: 2}
@@ -584,13 +584,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 91a18c72f2de72f4c9fd2a3c6bc85b9f, type: 2}
   small: 0.6
   large: 0.6
-  positionSmoothing: 25
-  rotationSmoothing: 100
-  randomYRotationOffset: 20
+  positionSmoothing: 15
+  rotationSmoothing: 15
+  randomYRotationOffset: 30
   upPosition: {x: 6, y: 0, z: -2.75}
   downPosition: {x: 0, y: 0, z: 0}
   upRotation: {x: -90, y: 0, z: 0}
   downRotation: {x: 0, y: 0, z: 0}
+  sinAplitude: 5
+  sinFrequency: 1
   currentHovered: 0
   loadedCartridges: []
   upInputQueued: 0
@@ -691,7 +693,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1059173432
 Transform:
   m_ObjectHideFlags: 0

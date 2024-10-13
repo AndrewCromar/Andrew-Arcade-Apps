@@ -24,6 +24,9 @@ public class CartridgeContainerController : MonoBehaviour
     [Space]
     [SerializeField] private Vector3 upRotation;
     [SerializeField] private Vector3 downRotation;
+    [Space]
+    [SerializeField] private float sinAplitude;
+    [SerializeField] private float sinFrequency;
 
     [Header("Debug")]
     [SerializeField] private int currentHovered = 0;
@@ -58,7 +61,15 @@ public class CartridgeContainerController : MonoBehaviour
         }
         currentHovered = Mathf.Clamp(currentHovered, 0, loadedCartridges.Count - 1);
 
-        foreach (GameObject cartridge in loadedCartridges) cartridge.GetComponent<CartridgeController>().DeHover();
+        foreach (GameObject cartridge in loadedCartridges)
+        {
+            CartridgeController cartridgeController = cartridge.GetComponent<CartridgeController>();
+            if (cartridgeController.GetHovered())
+            {
+                cartridgeController.SetYRotationOffset(Random.Range(-randomYRotationOffset, randomYRotationOffset));
+            }
+            cartridgeController.DeHover();
+        }
         loadedCartridges[currentHovered].GetComponent<CartridgeController>().Hover();
 
         CameraController.instance.SetTarget(loadedCartridges[currentHovered].transform);
@@ -70,10 +81,11 @@ public class CartridgeContainerController : MonoBehaviour
             bool hovered = cartridgeController.GetHovered();
             bool nextHovered = loadedCartridges[Mathf.Clamp(i + 1, 0, loadedCartridges.Count - 1)].GetComponent<CartridgeController>().GetHovered();
 
+
             if (i == 0) if (hovered) yPos += large - +(small / 2); else yPos += small / 2;
 
             loadedCartridges[i].transform.position = Vector3.Lerp(loadedCartridges[i].transform.position, new Vector3(0, yPos, 0) + (hovered ? upPosition : downPosition), positionSmoothing * Time.deltaTime);
-            loadedCartridges[i].transform.rotation = Quaternion.Lerp(loadedCartridges[i].transform.rotation, Quaternion.Euler((hovered ? upRotation : downRotation + new Vector3(0, cartridgeController.GetYRotationOffset(), 0))), rotationSmoothing * Time.deltaTime);
+            loadedCartridges[i].transform.rotation = Quaternion.Lerp(loadedCartridges[i].transform.rotation, Quaternion.Euler(hovered ? upRotation + new Vector3(sinAplitude * Mathf.Sin(sinFrequency * Time.time), sinAplitude * Mathf.Cos(sinFrequency * Time.time), 0) : downRotation + new Vector3(0, cartridgeController.GetYRotationOffset(), 0)), rotationSmoothing * Time.deltaTime);
 
             if (hovered || nextHovered) yPos += large; else yPos += small;
         }

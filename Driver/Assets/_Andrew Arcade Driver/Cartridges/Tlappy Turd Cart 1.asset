@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bce0422257000c43aa56684168833c7, type: 3}
+  m_Name: Tlappy Turd Cart 1
+  m_EditorClassIdentifier: 
+  appName: Green boy bob
+  appDeveloper: ONYX Development
+  appIcon: {fileID: 21300000, guid: ee49a6a8089aa6148914ed107ff8eb94, type: 3}
+  cartridgeColor: {r: 0.28910518, g: 0.5566038, b: 0.123398006, a: 0}
+  cartridgeTexture: {fileID: 2800000, guid: e0b662b04f2f28d4c919ec23a7edde51, type: 3}
