@@ -1,12 +1,17 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using ONYX;
+using System.IO;
+using System.Diagnostics;
 
 public class DriverController : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private GameObject appPrefab;
     [SerializeField] private Transform appsContainer;
+    [SerializeField] private Text outputText;
 
     [Header("Settings")]
     [SerializeField] private float positionSmoothing = 10;
@@ -24,11 +29,12 @@ public class DriverController : MonoBehaviour
     [SerializeField] private List<Transform> apps = new List<Transform>();
     [SerializeField] private List<AppProfile> appProfiles = new List<AppProfile>();
     [Space]
-    [SerializeField] private float selectedIndex = 0;
+    [SerializeField] private int selectedIndex = 0;
 
     [Header("Inputs")]
     [SerializeField] private bool positiveInputQueued;
     [SerializeField] private bool negativeInputQueued;
+    [SerializeField] private bool startInputQueued;
 
     private void Start()
     {
@@ -52,11 +58,16 @@ public class DriverController : MonoBehaviour
         {
             selectedIndex--;
         }
+        if(startInputQueued)
+        {
+            StartApp(appProfiles[selectedIndex]);
+        }
 
         selectedIndex = Mathf.Clamp(selectedIndex, 0, apps.Count - 1);
 
         positiveInputQueued = false;
         negativeInputQueued = false;
+        startInputQueued = false;
     }
 
     private void TransformApps()
@@ -80,7 +91,8 @@ public class DriverController : MonoBehaviour
             app.localScale = Vector3.Lerp(app.localScale, new Vector3(scale, scale, 0), scaleSmoothing * Time.deltaTime);
 
             float textScale = selected ? 1 : 0;
-            app.Find("Text").transform.localScale = Vector3.Lerp(app.Find("Text").transform.localScale, new Vector3(textScale, textScale, 1), textScaleSmoothing * Time.deltaTime);
+            Transform text = app.Find("Text").transform;
+            text.localScale = Vector3.Lerp(text.localScale, new Vector3(textScale, textScale, 1), textScaleSmoothing * Time.deltaTime);
         }
     }
 
@@ -95,18 +107,16 @@ public class DriverController : MonoBehaviour
             TextAsset jsonFile = file as TextAsset;
             if (jsonFile != null)
             {
-                Debug.Log("Found JSON file: " + jsonFile.name);
 
                 AppProfile app = JsonUtility.FromJson<AppProfile>(jsonFile.text);
 
                 if (app != null)
                 {
                     appProfiles.Add(app);
-                    Debug.Log($"Loaded App: {app.title}, Developer: {app.developer}, Icon Path: {app.icon}");
                 }
                 else
                 {
-                    Debug.LogWarning($"Failed to load JSON file: {jsonFile.name}");
+                    UnityEngine.Debug.LogWarning($"Failed to load JSON file: {jsonFile.name}");
                 }
             }
         }
@@ -125,8 +135,55 @@ public class DriverController : MonoBehaviour
         }
     }
 
+    public void Output(string _text){
+        outputText.text = $"{outputText.text}\n{_text}";
+    }
+
+    private void StartApp(AppProfile _appProfile)
+    {
+        Output($"-------------------------\nStarting app: {_appProfile.title}.");
+
+        string appNameCamelCase = new func_ToCamelCase().ToCamelCase(_appProfile.title);
+        string appPath = Path.Combine(Application.dataPath, "..", "..", appNameCamelCase, $"{appNameCamelCase}.x86_64");
+
+        if (File.Exists(appPath))
+        {
+            // Prepare the command to run the executable with Box64
+            string box64Path = "box64"; // Make sure 'box64' is in your PATH or provide the full path to the Box64 binary
+            string arguments = appPath;
+
+            // Create a new process start info
+            ProcessStartInfo startInfo = new ProcessStartInfo
+            {
+                FileName = box64Path,
+                Arguments = arguments,
+                RedirectStandardOutput = true,
+                RedirectStandardError = true,
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
+
+            try
+            {
+                // Start the Box64 process
+                Process process = Process.Start(startInfo);
+                Application.Quit();
+            }
+            catch (System.Exception ex)
+            {
+                Output($"Failed to start app: {ex.Message}");
+            }
+        }
+        else
+        {
+            Output($"Executable not found at: {appPath}");
+        }
+        Output("App startup process finished.");
+    }
+
     #region Inputs
     public void PositiveInput(InputAction.CallbackContext ctx) { if (ctx.performed) positiveInputQueued = true; }
     public void NegativeInput(InputAction.CallbackContext ctx) { if (ctx.performed) negativeInputQueued = true; }
+    public void StartInput(InputAction.CallbackContext ctx){ if (ctx.performed) startInputQueued = true; }
     #endregion
 }
