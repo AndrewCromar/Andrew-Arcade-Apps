@@ -19,7 +19,7 @@ namespace ONYX{
         [SerializeField] private Vector3 position_offset;
         [SerializeField] private float position_frequencyCounter;
 
-        [Header("Rotation ----------------------------------------")]
+        [Header("ROTATION ----------------------------------------")]
         [Header("Settings")]
         [SerializeField] private bool rotation = true;
         [SerializeField] private bool rotation_x = true;
