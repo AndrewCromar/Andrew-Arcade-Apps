@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using UnityEngine.InputSystem;
+using System.IO;
 
 public class CartridgeContainerController : MonoBehaviour
 {
@@ -39,7 +41,43 @@ public class CartridgeContainerController : MonoBehaviour
 
     private void Start()
     {
+        GenerateCatridges();
         LoadCartriges();
+    }
+
+    private void GenerateCatridges()
+    {
+        string dataFolder = "Assets/Apps/Data";
+        
+        // Check if the folder exists
+        if (AssetDatabase.IsValidFolder(dataFolder))
+        {
+            Debug.Log("Folder found: " + dataFolder);
+
+            // Get all files in the folder
+            string[] files = Directory.GetFiles(dataFolder);
+            foreach (string file in files)
+            {
+                // Get the file name without the full path
+                string fileName = Path.GetFileName(file);
+                
+                // Filter for .json files and exclude .meta files
+                if (fileName.EndsWith(".json"))
+                {
+                    Debug.Log("JSON File: " + fileName); // Print only the file name
+
+                    _cartridge = new Cartridge();
+
+                    
+
+                    cartridges.Append(_cartridge)
+                }
+            }
+        }
+        else
+        {
+            Debug.Log("Folder does not exist: " + dataFolder);
+        }
     }
 
     private void Update()
