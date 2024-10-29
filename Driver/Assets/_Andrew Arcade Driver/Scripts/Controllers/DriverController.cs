@@ -50,6 +50,7 @@ public class DriverController : MonoBehaviour
 
     private void HandleInputs()
     {
+        int prevSelectedIndex = selectedIndex;
         if (positiveInputQueued)
         {
             selectedIndex++;
@@ -64,6 +65,9 @@ public class DriverController : MonoBehaviour
         }
 
         selectedIndex = Mathf.Clamp(selectedIndex, 0, apps.Count - 1);
+
+        if(prevSelectedIndex > selectedIndex) CameraEffect_Shake.instance.PunchRotation(new Vector3(0, 0, 5));
+        else if (prevSelectedIndex < selectedIndex) CameraEffect_Shake.instance.PunchRotation(new Vector3(0, 0, -5));
 
         positiveInputQueued = false;
         negativeInputQueued = false;

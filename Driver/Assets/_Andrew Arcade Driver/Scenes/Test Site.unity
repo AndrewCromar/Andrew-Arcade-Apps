@@ -14,8 +14,8 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
-  m_FogColor: {r: 0, g: 0, b: 0, a: 1}
+  m_Fog: 0
+  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
   m_LinearFogStart: 0
@@ -508,20 +508,24 @@ MonoBehaviour:
   position_y: 1
   position_z: 0
   position_shakeSmoothing: 1
-  position_shakeAmplitude: 0.2
+  position_shakeAmplitude: 0.3
   position_shakeFrequency: 0.1
+  position_punchSmoothing: 15
   position_zero: {x: 0, y: 0, z: 0}
   position_offset: {x: 0, y: 0, z: 0}
+  position_punch: {x: 0, y: 0, z: 0}
   position_frequencyCounter: 0
   rotation: 1
   rotation_x: 0
   rotation_y: 0
   rotation_z: 1
   rotation_shakeSmoothing: 5
-  rotation_shakeAmplitude: 0.3
+  rotation_shakeAmplitude: 0.5
   rotation_shakeFrequency: 0.1
+  rotation_punchSmoothing: 10
   rotation_zero: {x: 0, y: 0, z: 0}
   rotation_offset: {x: 0, y: 0, z: 0}
+  rotation_punch: {x: 0, y: 0, z: 0}
   rotation_frequencyCounter: 0
 --- !u!1 &1142234229
 GameObject:
