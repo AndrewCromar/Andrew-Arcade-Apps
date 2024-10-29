@@ -3,30 +3,30 @@
     "maps": [
         {
             "name": "App Selection",
-            "id": "d04a59e9-5c3b-42c8-b609-adf835c0e27b",
+            "id": "ed7ade35-6fb5-4fa0-9bc3-5d8bb15c8f2a",
             "actions": [
                 {
-                    "name": "Up",
+                    "name": "Positive",
                     "type": "Button",
-                    "id": "3d119e27-1e62-4864-b966-20cd8c4e3e69",
+                    "id": "93a08050-0a87-4880-93d8-5d35724eabd3",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Down",
+                    "name": "Negative",
                     "type": "Button",
-                    "id": "80c4cc35-8e86-400d-a499-6bed5b9e86b6",
+                    "id": "07917bbd-dc6d-44c5-9bca-e39217addbe9",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Select",
+                    "name": "Start",
                     "type": "Button",
-                    "id": "cdb462f8-12b5-47b2-a5fb-5af8476b0353",
+                    "id": "0a76ee63-ce6a-4a64-9c06-b4afca55b5c1",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -36,56 +36,34 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "cd8340ba-013b-46ae-992d-77028de013a1",
-                    "path": "<Keyboard>/w",
+                    "id": "3f56a1c7-857b-4afa-bcff-a196bbc216f6",
+                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Up",
+                    "action": "Positive",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "34ba21ea-2c40-46c5-a0bd-70034ac3d9a3",
+                    "id": "8c05b251-4e53-4d38-8cff-424a6d5e514e",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Negative",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4a3e0168-e16c-49bf-ace6-46bdc5e68559",
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Up",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4cef345c-6434-47d9-8884-f394f9e2a1f3",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Down",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "af107caa-1d1e-4753-850e-e2074a44923a",
-                    "path": "<Keyboard>/downArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Down",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c9605841-136d-4dcd-ba7e-e667c1a64dc2",
-                    "path": "<Keyboard>/enter",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Select",
+                    "action": "Start",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
