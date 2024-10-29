@@ -510,7 +510,7 @@ MonoBehaviour:
   position_shakeSmoothing: 1
   position_shakeAmplitude: 0.3
   position_shakeFrequency: 0.1
-  position_punchSmoothing: 15
+  position_punchSmoothing: 25
   position_zero: {x: 0, y: 0, z: 0}
   position_offset: {x: 0, y: 0, z: 0}
   position_punch: {x: 0, y: 0, z: 0}
