@@ -1,0 +1,54 @@
+{
+    "name": "Default Input Actions",
+    "maps": [
+        {
+            "name": "App Selection",
+            "id": "ed7ade35-6fb5-4fa0-9bc3-5d8bb15c8f2a",
+            "actions": [
+                {
+                    "name": "Positive",
+                    "type": "Button",
+                    "id": "93a08050-0a87-4880-93d8-5d35724eabd3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Negative",
+                    "type": "Button",
+                    "id": "07917bbd-dc6d-44c5-9bca-e39217addbe9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "3f56a1c7-857b-4afa-bcff-a196bbc216f6",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Positive",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8c05b251-4e53-4d38-8cff-424a6d5e514e",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Negative",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
