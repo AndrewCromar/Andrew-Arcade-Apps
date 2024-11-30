@@ -8,6 +8,8 @@ using System.Diagnostics;
 
 public class DriverController : MonoBehaviour
 {
+    [HideInInspector] public static DriverController instance;
+
     [Header("References")]
     [SerializeField] private GameObject appPrefab;
     [SerializeField] private Transform appsContainer;
@@ -36,6 +38,11 @@ public class DriverController : MonoBehaviour
     [SerializeField] private bool negativeInputQueued;
     [SerializeField] private bool startInputQueued;
 
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void Start()
     {
         LoadApps();
@@ -59,14 +66,14 @@ public class DriverController : MonoBehaviour
         {
             selectedIndex--;
         }
-        if(startInputQueued)
+        if (startInputQueued)
         {
             StartApp(appProfiles[selectedIndex]);
         }
 
         selectedIndex = Mathf.Clamp(selectedIndex, 0, apps.Count - 1);
 
-        if(prevSelectedIndex > selectedIndex) CameraEffect_Shake.instance.PunchRotation(new Vector3(0, 0, 5));
+        if (prevSelectedIndex > selectedIndex) CameraEffect_Shake.instance.PunchRotation(new Vector3(0, 0, 5));
         else if (prevSelectedIndex < selectedIndex) CameraEffect_Shake.instance.PunchRotation(new Vector3(0, 0, -5));
 
         positiveInputQueued = false;
@@ -139,7 +146,8 @@ public class DriverController : MonoBehaviour
         }
     }
 
-    public void Output(string _text){
+    public void Output(string _text)
+    {
         outputText.text = $"{outputText.text}\n{_text}";
     }
 
@@ -188,6 +196,6 @@ public class DriverController : MonoBehaviour
     #region Inputs
     public void PositiveInput(InputAction.CallbackContext ctx) { if (ctx.performed) positiveInputQueued = true; }
     public void NegativeInput(InputAction.CallbackContext ctx) { if (ctx.performed) negativeInputQueued = true; }
-    public void StartInput(InputAction.CallbackContext ctx){ if (ctx.performed) startInputQueued = true; }
+    public void StartInput(InputAction.CallbackContext ctx) { if (ctx.performed) startInputQueued = true; }
     #endregion
 }

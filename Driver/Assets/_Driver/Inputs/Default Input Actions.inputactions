@@ -9,7 +9,7 @@
                     "name": "Positive",
                     "type": "Button",
                     "id": "93a08050-0a87-4880-93d8-5d35724eabd3",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -27,7 +27,7 @@
                     "name": "Start",
                     "type": "Button",
                     "id": "0a76ee63-ce6a-4a64-9c06-b4afca55b5c1",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -38,6 +38,17 @@
                     "name": "",
                     "id": "3f56a1c7-857b-4afa-bcff-a196bbc216f6",
                     "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Positive",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4ef7bf6b-911e-44e1-a1b9-f4b8d7d565b3",
+                    "path": "<HID::Microsoft Corp. Microsoft Corp. Xbox 360 Controller>/trigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -58,8 +69,30 @@
                 },
                 {
                     "name": "",
+                    "id": "2c913a00-2028-4533-a17f-a270c4a6170e",
+                    "path": "<HID::Microsoft Corp. Microsoft Corp. Xbox 360 Controller>/button4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Negative",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "4a3e0168-e16c-49bf-ace6-46bdc5e68559",
                     "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Start",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2758af86-5f77-4d1c-83e2-cf6cc920151d",
+                    "path": "<HID::Microsoft Corp. Microsoft Corp. Xbox 360 Controller>/button2",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
