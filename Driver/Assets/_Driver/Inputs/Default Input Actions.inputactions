@@ -48,7 +48,7 @@
                 {
                     "name": "",
                     "id": "4ef7bf6b-911e-44e1-a1b9-f4b8d7d565b3",
-                    "path": "<HID::Microsoft Corp. Microsoft Corp. Xbox 360 Controller>/trigger",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -70,7 +70,7 @@
                 {
                     "name": "",
                     "id": "2c913a00-2028-4533-a17f-a270c4a6170e",
-                    "path": "<HID::Microsoft Corp. Microsoft Corp. Xbox 360 Controller>/button4",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -92,7 +92,7 @@
                 {
                     "name": "",
                     "id": "2758af86-5f77-4d1c-83e2-cf6cc920151d",
-                    "path": "<HID::Microsoft Corp. Microsoft Corp. Xbox 360 Controller>/button2",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

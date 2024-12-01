@@ -18,41 +18,8 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "db174a14-2612-48bd-8545-b06bad32d28b",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Flap",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2ca3b14d-4985-4f18-8e2c-e6e5f450a326",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Flap",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e21928ad-0e25-4963-b871-777d10fdb93d",
+                    "id": "63bdc6ee-66b8-4eb8-8b9c-d63b60a780f5",
                     "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Flap",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1e6ebd8f-6e6f-4b1d-bd6f-2e28e13c448f",
-                    "path": "<HID::Microsoft Corp. CircuitPython HID>/button2",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
