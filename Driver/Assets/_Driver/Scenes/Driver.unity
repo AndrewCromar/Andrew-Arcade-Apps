@@ -316,15 +316,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1017765379}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f94519c3b82750458a9a8aeb16de2ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 4bc2d137f783b564c910f57691076554, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   position: 1
   position_x: 1
   position_y: 1
-  position_z: 0
+  position_z: 1
   position_shakeSmoothing: 1
-  position_shakeAmplitude: 0.3
+  position_shakeAmplitude: 0.2
   position_shakeFrequency: 0.1
   position_punchSmoothing: 25
   position_zero: {x: 0, y: 0, z: 0}
@@ -332,11 +332,11 @@ MonoBehaviour:
   position_punch: {x: 0, y: 0, z: 0}
   position_frequencyCounter: 0
   rotation: 1
-  rotation_x: 0
-  rotation_y: 0
+  rotation_x: 1
+  rotation_y: 1
   rotation_z: 1
   rotation_shakeSmoothing: 5
-  rotation_shakeAmplitude: 0.5
+  rotation_shakeAmplitude: 0.3
   rotation_shakeFrequency: 0.1
   rotation_punchSmoothing: 10
   rotation_zero: {x: 0, y: 0, z: 0}
@@ -375,7 +375,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   appPrefab: {fileID: 6279307524669289193, guid: 3a65fcaa9f431c54dbea4d0dea72cf68, type: 3}
   appsContainer: {fileID: 979769050}
-  outputText: {fileID: 0}
   positionSmoothing: 10
   centerWidth: 2
   positionSpacing: 1.5

@@ -13,7 +13,7 @@ namespace ONYX
 
         public static void StartApp(string _appName)
         {
-            UnityEngine.Debug.Log($"-------------------------\nStarting app: {_appName}.");
+            UnityEngine.Debug.Log($"Starting app: {_appName}.");
 
             string appNameCamelCase = Function_ToCamelCase.ToCamelCase(_appName);
             string appPath = Path.Combine(Application.dataPath, "..", "..", appNameCamelCase, $"{appNameCamelCase}.x86_64");
