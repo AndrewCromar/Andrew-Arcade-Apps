@@ -1,6 +1,9 @@
-public class AppProfile
+namespace ONYX
 {
-    public string title;
-    public string developer;
-    public string icon;
+    public class AppProfile
+    {
+        public string title;
+        public string developer;
+        public string icon;
+    }
 }

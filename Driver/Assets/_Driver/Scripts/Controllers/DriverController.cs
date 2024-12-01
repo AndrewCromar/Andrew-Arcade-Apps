@@ -1,10 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using ONYX;
-using System.IO;
-using System.Diagnostics;
 
 public class DriverController : MonoBehaviour
 {
@@ -13,7 +10,6 @@ public class DriverController : MonoBehaviour
     [Header("References")]
     [SerializeField] private GameObject appPrefab;
     [SerializeField] private Transform appsContainer;
-    [SerializeField] private Text outputText;
 
     [Header("Settings")]
     [SerializeField] private float positionSmoothing = 10;
@@ -68,7 +64,7 @@ public class DriverController : MonoBehaviour
         }
         if (startInputQueued)
         {
-            StartApp(appProfiles[selectedIndex]);
+            AndrewArcadeTools.StartApp(appProfiles[selectedIndex].title);
         }
 
         selectedIndex = Mathf.Clamp(selectedIndex, 0, apps.Count - 1);
@@ -144,53 +140,6 @@ public class DriverController : MonoBehaviour
 
             newApp.GetComponent<AppController>().SetupApp(app);
         }
-    }
-
-    public void Output(string _text)
-    {
-        outputText.text = $"{outputText.text}\n{_text}";
-    }
-
-    private void StartApp(AppProfile _appProfile)
-    {
-        Output($"-------------------------\nStarting app: {_appProfile.title}.");
-
-        string appNameCamelCase = new func_ToCamelCase().ToCamelCase(_appProfile.title);
-        string appPath = Path.Combine(Application.dataPath, "..", "..", appNameCamelCase, $"{appNameCamelCase}.x86_64");
-
-        if (File.Exists(appPath))
-        {
-            // Prepare the command to run the executable with Box64
-            string box64Path = "box64"; // Make sure 'box64' is in your PATH or provide the full path to the Box64 binary
-            string arguments = appPath;
-
-            // Create a new process start info
-            ProcessStartInfo startInfo = new ProcessStartInfo
-            {
-                FileName = box64Path,
-                Arguments = arguments,
-                RedirectStandardOutput = true,
-                RedirectStandardError = true,
-                UseShellExecute = false,
-                CreateNoWindow = true
-            };
-
-            try
-            {
-                // Start the Box64 process
-                Process process = Process.Start(startInfo);
-                Application.Quit();
-            }
-            catch (System.Exception ex)
-            {
-                Output($"Failed to start app: {ex.Message}");
-            }
-        }
-        else
-        {
-            Output($"Executable not found at: {appPath}");
-        }
-        Output("App startup process finished.");
     }
 
     #region Inputs

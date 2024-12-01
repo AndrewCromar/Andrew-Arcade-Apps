@@ -9,9 +9,9 @@ public class AppController : MonoBehaviour
     [SerializeField] private Text developerText;
 
     [Header("Debug")]
-    [SerializeField] private AppProfile appProfile;
+    [SerializeField] private ONYX.AppProfile appProfile;
 
-    public void SetupApp(AppProfile _appProfile)
+    public void SetupApp(ONYX.AppProfile _appProfile)
     {
         appProfile = _appProfile;
 

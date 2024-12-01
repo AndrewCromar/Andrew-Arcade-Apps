@@ -2,9 +2,9 @@ using System.Collections.Generic;
 
 namespace ONYX
 {
-    public class func_ToCamelCase
+    public static class Function_ToCamelCase
     {
-        public string ToCamelCase(string _text)
+        public static string ToCamelCase(string _text)
         {
             string lower = _text.ToLower();
             List<string> wordList = new List<string>(lower.Split(' '));
