@@ -93,15 +93,20 @@ namespace ONYX
 
         void CreateSubFolders(string rootPath)
         {
+            Directory.CreateDirectory(rootPath + "/Animating");
             Directory.CreateDirectory(rootPath + "/Fonts");
             Directory.CreateDirectory(rootPath + "/Images");
             Directory.CreateDirectory(rootPath + "/Images/Logos");
+            Directory.CreateDirectory(rootPath + "/Images/Sprites");
             Directory.CreateDirectory(rootPath + "/Materials");
             Directory.CreateDirectory(rootPath + "/Objects");
+            Directory.CreateDirectory(rootPath + "/Objects/Sound Effect");
+            Directory.CreateDirectory(rootPath + "/Rendering");
             Directory.CreateDirectory(rootPath + "/Scenes");
             Directory.CreateDirectory(rootPath + "/Scripts");
             Directory.CreateDirectory(rootPath + "/Scripts/Controllers");
             Directory.CreateDirectory(rootPath + "/Scripts/Editor");
+            Directory.CreateDirectory(rootPath + "/Scripts/Managers");
             Directory.CreateDirectory(rootPath + "/Sounds");
         }
 

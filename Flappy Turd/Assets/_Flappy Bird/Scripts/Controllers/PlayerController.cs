@@ -1,3 +1,4 @@
+using ONYX;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -94,4 +95,6 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    public void OnDriverButton(InputAction.CallbackContext ctx) { if (ctx.performed) AndrewArcadeTools.ReturnToDriver(); }
 }

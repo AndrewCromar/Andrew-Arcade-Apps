@@ -10,5 +10,11 @@ namespace ONYX
         {
             ProjectSetup_window.InitWindow();
         }
+
+        [MenuItem("ONYX/Grid Placer Tool")]
+        public static void InitGridPlacerTool()
+        {
+            GridPlacer_window.InitWindow();
+        }
     }
 }
