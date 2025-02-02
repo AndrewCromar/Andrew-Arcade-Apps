@@ -43,6 +43,8 @@ public class DriverController : MonoBehaviour
     {
         LoadApps();
         GenerateApps();
+
+        Cursor.visible = false;
     }
 
     private void Update()
