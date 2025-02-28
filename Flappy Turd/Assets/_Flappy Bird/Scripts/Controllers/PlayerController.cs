@@ -96,5 +96,5 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnDriverButton(InputAction.CallbackContext ctx) { if (ctx.performed) AndrewArcadeTools.ReturnToDriver(); }
+    public void OnExitButton(InputAction.CallbackContext ctx) { if (ctx.performed) Application.Quit(); }
 }
