@@ -1,0 +1,22 @@
+{
+    "apps": [
+        {
+            "title": "Flappy Turd",
+            "developer": "ONYX Development",
+            "icon": "icons/flappyTurd",
+            "launchCommand": "box64 {appsdur}/flappyTurd/flappyTurd.x86_64"
+        },
+        {
+            "title": "Oranyth",
+            "developer": "ONYX Development",
+            "icon": "icons/oranyth",
+            "launchCommand": "box64 {appsdur}/oranyth/oranyth.x86_64"
+        },
+        {
+            "title": "School Countdown",
+            "developer": "ONYX Development",
+            "icon": "icons/schoolCountdown",
+            "launchCommand": "box64 {appsdur}/schoolCountdown/schoolCountdown.x86_64"
+        }
+    ]
+}
