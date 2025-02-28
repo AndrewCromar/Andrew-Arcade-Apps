@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 78cfdfdd66531c64aa1a0d7173eceb3b
+guid: 50d36b624968034459f54f169be62edd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8527568592950175283
-    second: empty_0
+      213: -1483396133303159791
+    second: dpad empty_0
+  - first:
+      213: 7338567490985806091
+    second: dpad empty_1
+  - first:
+      213: 3187254466063405707
+    second: dpad empty_2
+  - first:
+      213: -2120993219714479832
+    second: dpad empty_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -126,13 +135,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: empty_0
+      name: dpad empty_0
       rect:
         serializedVersion: 2
-        x: 27
-        y: 28
-        width: 46
-        height: 45
+        x: 16
+        y: 37
+        width: 27
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +150,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dc95d63bb8df7a980800000000000000
-      internalID: -8527568592950175283
+      spriteID: 114f64d731be96be0800000000000000
+      internalID: -1483396133303159791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dpad empty_1
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 60
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b09407c6044d7d560800000000000000
+      internalID: 7338567490985806091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dpad empty_2
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 37
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b829c72dc076b3c20800000000000000
+      internalID: 3187254466063405707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dpad empty_3
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 17
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82908e777e7b092e0800000000000000
+      internalID: -2120993219714479832
       vertices: []
       indices: 
       edges: []
@@ -151,7 +226,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +236,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      empty_0: -8527568592950175283
+      dpad empty_0: -1483396133303159791
+      dpad empty_1: 7338567490985806091
+      dpad empty_2: 3187254466063405707
+      dpad empty_3: -2120993219714479832
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

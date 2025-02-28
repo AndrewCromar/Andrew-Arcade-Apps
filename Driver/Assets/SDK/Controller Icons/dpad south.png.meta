@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: cb287b33cbcc10a428fb6076de853fef
+guid: 799ba493e8baa744db2ca7e85ebd92fe
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1194685025707199936
-    second: joystick_0
+      213: -5079629318892036656
+    second: dpad south_0
+  - first:
+      213: -5656733468285253203
+    second: dpad south_1
+  - first:
+      213: 4761122784069165194
+    second: dpad south_2
+  - first:
+      213: 158757627973368256
+    second: dpad south_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -126,13 +135,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: joystick_0
+      name: dpad south_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 3
-        width: 94
-        height: 94
+        x: 16
+        y: 37
+        width: 27
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +150,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0427e308c40ab6fe0800000000000000
-      internalID: -1194685025707199936
+      spriteID: 0ddd7c82c088189b0800000000000000
+      internalID: -5079629318892036656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dpad south_1
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 60
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da94bc991ee3f71b0800000000000000
+      internalID: -5656733468285253203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dpad south_2
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 37
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a80267452f7e21240800000000000000
+      internalID: 4761122784069165194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dpad south_3
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 17
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c97cb4b835043200800000000000000
+      internalID: 158757627973368256
       vertices: []
       indices: 
       edges: []
@@ -151,7 +226,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +236,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      joystick_0: -1194685025707199936
+      dpad south_0: -5079629318892036656
+      dpad south_1: -5656733468285253203
+      dpad south_2: 4761122784069165194
+      dpad south_3: 158757627973368256
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
