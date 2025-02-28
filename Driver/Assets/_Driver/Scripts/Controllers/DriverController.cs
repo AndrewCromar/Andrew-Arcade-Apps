@@ -66,7 +66,7 @@ public class DriverController : MonoBehaviour
         }
         if (startInputQueued)
         {
-            AndrewArcadeTools.StartApp(appProfiles[selectedIndex].title);
+            AA_AppManagement.ExecuteLaunch(appProfiles[selectedIndex].launchCommand);
         }
 
         selectedIndex = Mathf.Clamp(selectedIndex, 0, apps.Count - 1);
@@ -107,27 +107,26 @@ public class DriverController : MonoBehaviour
 
     private void LoadApps()
     {
-        string dataPath = "Apps";
+        string dataPath = "Apps/apps";
 
-        Object[] jsonFiles = Resources.LoadAll(dataPath, typeof(TextAsset));
+        TextAsset jsonFile = Resources.Load<TextAsset>(dataPath);
 
-        foreach (Object file in jsonFiles)
+        if (jsonFile != null)
         {
-            TextAsset jsonFile = file as TextAsset;
-            if (jsonFile != null)
+            AppProfileList appsList = JsonUtility.FromJson<AppProfileList>(jsonFile.text);
+
+            if (appsList != null && appsList.apps != null)
             {
-
-                AppProfile app = JsonUtility.FromJson<AppProfile>(jsonFile.text);
-
-                if (app != null)
-                {
-                    appProfiles.Add(app);
-                }
-                else
-                {
-                    UnityEngine.Debug.LogWarning($"Failed to load JSON file: {jsonFile.name}");
-                }
+                appProfiles.AddRange(appsList.apps);
             }
+            else
+            {
+                UnityEngine.Debug.LogWarning("Failed to parse apps.json");
+            }
+        }
+        else
+        {
+            UnityEngine.Debug.LogWarning("Failed to load apps.json");
         }
     }
 
